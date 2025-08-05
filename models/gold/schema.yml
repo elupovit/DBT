@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: gold_facility_performance_summary
+    description: "Facility-level performance metrics for dashboard"
+    columns:
+      - name: facility_name
+        tests:
+          - not_null
+      - name: avg_hours_per_patient
+        tests:
+          - not_null
+
+  - name: gold_state_benchmarks  
+    description: "State-level benchmark comparisons"
