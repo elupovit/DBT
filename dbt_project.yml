@@ -2,19 +2,19 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'eitan_dbt_project'
+name: 'healthcare_analytics'
 version: '1.0.0'
 config-version: 2
 
 # This setting configures which "profile" dbt uses for this project.
-profile: 'default'
+profile: 'healthcare_analytics'
 
 vars:
    wrk_schema: BRONZE
-   file_format_csv: MYDB.BRONZE.MY_CSV_FORMAT
+   file_format_csv: HEALTHCARE_ANALYTICS.BRONZE.MY_CSV_FORMAT
    purge_status: FALSE
-   stage_name: MYDB.BRONZE.S3_TEST_STAGE
-   rawhist_db: MYDB
+   stage_name: HEALTHCARE_ANALYTICS.BRONZE.S3_HEALTHCARE_STAGE
+   rawhist_db: HEALTHCARE_ANALYTICS
 
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
@@ -38,13 +38,11 @@ clean-targets:         # directories to be removed by `dbt clean`
 # In dbt, the default materialization for a model is a view. This means, when you run 
 # dbt run or dbt build, all of your models will be built as a view in your data platform. 
 models:
-  eitan_dbt_workshop:
+  healthcare_analytics:
     example:
         schema: example 
     silver:
-        schema: silver
-        materialized: table
+        +materialized: table
     gold:
-        schema: gold
         materialized: view
 
