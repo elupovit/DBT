@@ -1,3 +1,9 @@
+{{ config(
+    materialized='table',
+    database='HEALTHCARE_ANALYTICS',
+    schema='gold'
+) }}
+
 SELECT 
     se.facility_name,
     se.state,

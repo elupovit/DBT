@@ -1,3 +1,9 @@
+{{ config(
+    materialized='table',
+    database='HEALTHCARE_ANALYTICS',
+    schema='gold'
+) }}
+
 SELECT 
     state,
     COUNT(DISTINCT facility_id) as facility_count,
