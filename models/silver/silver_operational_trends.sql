@@ -1,3 +1,10 @@
+{{ config(
+    materialized='table',
+    database='HEALTHCARE_ANALYTICS',
+    schema='silver',
+    alias='silver_operational_trends'
+) }}
+
 SELECT
     facility_id,
     facility_name,

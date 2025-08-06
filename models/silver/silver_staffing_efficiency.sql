@@ -1,3 +1,10 @@
+{{ config(
+    materialized='table',
+    database='HEALTHCARE_ANALYTICS',
+    schema='silver',
+    alias='silver_staffing_efficiency'
+) }}
+
 SELECT
     facility_id,
     facility_name,

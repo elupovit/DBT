@@ -1,3 +1,10 @@
+{{ config(
+    materialized='table',
+    database='HEALTHCARE_ANALYTICS',
+    schema='silver',
+    alias='silver_nursing_staffing_cleaned'
+) }}
+
 SELECT 
     PROVNUM as facility_id,
     PROVNAME as facility_name,
