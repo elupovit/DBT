@@ -1,7 +1,8 @@
 {{ config(
     materialized='table',
     database='HEALTHCARE_ANALYTICS',
-    schema='gold'
+    schema='gold',
+    alias='gold_state_benchmarks'
 ) }}
 
 SELECT 
